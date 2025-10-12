@@ -1,7 +1,6 @@
 package cz.czechitas.java2webapps.ukol3.controller;
 
-import cz.czechitas.java2webapps.ukol3.Entity.Vizitka;
-import jakarta.websocket.server.PathParam;
+import cz.czechitas.java2webapps.ukol3.entity.Vizitka;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
