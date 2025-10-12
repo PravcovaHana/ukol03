@@ -13,25 +13,26 @@
 <body>
 <div class="detail">
     <div class="vizitka">
-        <div class="jmeno">Dita (Přikrylová) Formánková</div>
-        <div class="firma">Czechitas z. s.</div>
+        <div class="jmeno">${(vizitka.jmeno)!""} ${(vizitka.prijmeni)!""}</div>
+        <div class="firma">${(vizitka.firma)!"neuvedeno"}</div>
         <div class="udaje">
             <div class="adresa">
-                <div>Václavské náměstí 837/11</div>
-                <div><span>11000</span> Praha 1</div>
+                <div>${(vizitka.ulice)!""}</div>
+                <div><span>${(vizitka.psc)!""}</span> ${(vizitka.obec)!""}</div>
             </div>
             <div class="kontakty">
-                <div><i class="las la-at"></i> <span>dita@czechitas.cs</span></div>
-                <div><i class="las la-phone-alt"></i> <span>+420 800123456</span></div>
-                <div><i class="las la-globe"></i> <span>www.czechitas.cz</span></div>
+                <div><i class="las la-at"></i> <span>${(vizitka.email)!"neuvedeno"}</span></div>
+                <div><i class="las la-phone-alt"></i> <span>${(vizitka.telefon)!"neuvedeno"}</span></div>
+                <div><i class="las la-globe"></i> <span>${(vizitka.web)!"neuvedeno"}</span></div>
             </div>
         </div>
     </div>
 
+    [#if vizitka.celaAdresa??]
     <div class="mapa">
-        <iframe style="border:none" src="https://frame.mapy.cz/?q=${"Václavské náměstí 837/11, Praha"?url("UTF-8")}" width="100%" height="100%" frameborder="0"></iframe>
+        <iframe style="border:none" src="https://frame.mapy.cz/?q=${vizitka.celaAdresa?url("UTF-8")}" width="100%" height="100%" frameborder="0"></iframe>
     </div>
-
+    [/#if]
 </div>
 </body>
 </html>
