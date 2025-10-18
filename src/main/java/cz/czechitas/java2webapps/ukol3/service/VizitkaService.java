@@ -1,6 +1,6 @@
 package cz.czechitas.java2webapps.ukol3.service;
 
-import cz.czechitas.java2webapps.ukol3.controller.Vizitka;
+import cz.czechitas.java2webapps.ukol3.entity.Vizitka;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

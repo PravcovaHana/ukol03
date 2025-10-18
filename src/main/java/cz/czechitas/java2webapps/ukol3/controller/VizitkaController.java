@@ -1,5 +1,6 @@
 package cz.czechitas.java2webapps.ukol3.controller;
 
+import cz.czechitas.java2webapps.ukol3.entity.Vizitka;
 import cz.czechitas.java2webapps.ukol3.service.VizitkaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
