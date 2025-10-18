@@ -1,4 +1,4 @@
-package cz.czechitas.java2webapps.ukol3.entity;
+package cz.czechitas.java2webapps.ukol3.controller;
 
 public class Vizitka {
 
