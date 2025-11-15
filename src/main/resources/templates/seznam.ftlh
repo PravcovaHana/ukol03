@@ -7,7 +7,7 @@
 <body>
 <div class="seznam">
     [#list vizitky as vizitka]
-    <a href="/detail/${vizitka?index}">
+    <a href="/detail/${vizitka.id}">
         <div class="vizitka">
             <div class="jmeno">${(vizitka.jmeno)!""} ${(vizitka.prijmeni)!""}</div>
             <div class="firma">${(vizitka.firma)!"neuvedeno"}</div>
