@@ -2,3 +2,10 @@ spring:
   freemarker:
     settings:
       output_encoding: UTF-8
+
+
+  datasource:
+    url: jdbc:h2:file:./data/vizitky;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;COLLATION=CZECH
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ''

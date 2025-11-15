@@ -1,15 +1,44 @@
 package cz.czechitas.java2webapps.ukol3.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.Length;
+
+@Entity
 public class Vizitka {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Length(max = 100)
+    @NotBlank
     private String jmeno;
+    @Length(max = 100)
+    @NotBlank
     private String prijmeni;
+    @Length(max = 100)
+    @NotBlank
     private String firma;
+    @Length(max = 100)
     private String ulice;
+    @Length(max = 100)
     private String obec;
+    @Length(max = 5)
     private String psc;
+    @Length(max = 100)
+    @Email
     private String email;
+    @Length(min = 9, max = 13)
+    @Pattern(regexp = "\\+?\\d+")
     private String telefon;
+    @Length(max = 100)
     private String web;
 
     public Vizitka() {
@@ -109,5 +138,13 @@ public class Vizitka {
 
     public void setWeb(String web) {
         this.web = web;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

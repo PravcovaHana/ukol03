@@ -13,18 +13,18 @@
             <input name="prijmeni" type="text" value="${(vizitka.prijmeni)!""}" placeholder="prijmeni" required />
         </div>
         <div class="firma">
-            <input name="firma" type="text" value="${(vizitka.firma)!""}" placeholder="firma" />
+            <input name="firma" type="text" value="${(vizitka.firma)!""}" placeholder="firma" required />
         </div>
         <div class="udaje">
             <div class="adresa">
                 <div>
-                    <input name="ulice" type="text" value="${(vizitka.ulice)!""}" placeholder="ulice cislo" />
+                    <input name="ulice" type="text" value="${(vizitka.ulice)!""}" placeholder="ulice cislo" required />
                 </div>
                 <div><span>
-                        <input name="psc" type="text" value="${(vizitka.psc)!""}" placeholder="psc" />
+                        <input name="psc" type="text" value="${(vizitka.psc)!""}" placeholder="psc" required />
                     </span>
                      
-                    <input name="obec" type="text" value="${(vizitka.obec)!""}" placeholder="obec" />
+                    <input name="obec" type="text" value="${(vizitka.obec)!""}" placeholder="obec" required />
                 </div>
             </div>
             <div class="kontakty">
