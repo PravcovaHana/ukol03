@@ -31,6 +31,7 @@ public class Vizitka {
     @Length(max = 100)
     private String obec;
     @Length(max = 5)
+    @Pattern(regexp = "\\d{5}")
     private String psc;
     @Length(max = 100)
     @Email

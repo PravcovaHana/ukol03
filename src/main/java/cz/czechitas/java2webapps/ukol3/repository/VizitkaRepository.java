@@ -4,9 +4,9 @@ import cz.czechitas.java2webapps.ukol3.entity.Vizitka;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface VizitkaRepository  extends CrudRepository<Vizitka, Integer> {
 
-
-    Vizitka getById(int id);
 }

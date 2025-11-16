@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VizitkaService {
@@ -21,8 +22,12 @@ public class VizitkaService {
         return vizitkaRepository.findAll();
     }
 
-    public Vizitka getById(int id) {
-        return vizitkaRepository.getById(id);
+    public Vizitka nova() {
+        return new Vizitka();
+    }
+
+    public Optional<Vizitka> findById(int id) {
+        return vizitkaRepository.findById(id);
     }
 
     public Vizitka append(Vizitka vizitka) {

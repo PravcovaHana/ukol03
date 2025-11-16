@@ -1,4 +1,5 @@
 [#ftl]
+[#import "/spring.ftl" as spring]
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -6,32 +7,55 @@
 </head>
 <body>
 <div class="detail">
-    <form action="[#if idVizitka??]/${idVizitka}[#else]/novaUlozit[/#if]" method="post" class="vizitka">
+
+
+    <form action="[#if idVizitka??]/${idVizitka}[#else]/novaUlozit[/#if]" method="post">
+        <div class="vizitka">
         <div class="jmeno">
             <input name="jmeno" type="text" value="${(vizitka.jmeno)!""}" placeholder="jmeno" required />
              
             <input name="prijmeni" type="text" value="${(vizitka.prijmeni)!""}" placeholder="prijmeni" required />
+            [@spring.bind "vizitka.jmeno"/]
+            <div class="error">[@spring.showErrors "<br>"/]</div>
+            [@spring.bind "vizitka.prijmeni"/]
+            <div class="error">[@spring.showErrors "<br>"/]</div>
         </div>
+
         <div class="firma">
             <input name="firma" type="text" value="${(vizitka.firma)!""}" placeholder="firma" required />
+            [@spring.bind "vizitka.firma"/]
+            <div class="error">[@spring.showErrors "<br>"/]</div>
         </div>
         <div class="udaje">
             <div class="adresa">
                 <div>
                     <input name="ulice" type="text" value="${(vizitka.ulice)!""}" placeholder="ulice cislo" required />
                 </div>
+                [@spring.bind "vizitka.ulice"/]
+                <div class="error">[@spring.showErrors "<br>"/]</div>
                 <div><span>
                         <input name="psc" type="text" value="${(vizitka.psc)!""}" placeholder="psc" required />
                     </span>
+                    [@spring.bind "vizitka.psc"/]
+                    <div class="error">[@spring.showErrors "<br>"/]</div>
                      
                     <input name="obec" type="text" value="${(vizitka.obec)!""}" placeholder="obec" required />
+                    [@spring.bind "vizitka.obec"/]
+                    <div class="error">[@spring.showErrors "<br>"/]</div>
                 </div>
             </div>
             <div class="kontakty">
                 <div><i class="las la-at"></i> <span><input name="email" type="text" value="${(vizitka.email)!""}" placeholder="email" /></span></div>
+                [@spring.bind "vizitka.email"/]
+                <div class="error">[@spring.showErrors "<br>"/]</div>
                 <div><i class="las la-phone-alt"></i> <span><input name="telefon" type="text" value="${(vizitka.telefon)!""}" placeholder="telefon" /></span></div>
+                [@spring.bind "vizitka.telefon"/]
+                <div class="error">[@spring.showErrors "<br>"/]</div>
                 <div><i class="las la-globe"></i> <span><input name="web" type="text" value="${(vizitka.web)!""}" placeholder="web" /></span></div>
+                [@spring.bind "vizitka.web"/]
+                <div class="error">[@spring.showErrors "<br>"/]</div>
             </div>
+        </div>
         </div>
         <div class="tlacitko">
             <button type="submit" class="btn btn-primary">Uložit</button>
@@ -39,7 +63,7 @@
     </form>
 
     [#if idVizitka??]
-        <div style="display: inline-block; margin-top: 5px;">
+        <div style="display: inline-block; margin-top: -35px;">
             <form action="/delete" method="post" class="d-inline">
                 <input type="hidden" name="id" value="${idVizitka}"/>
                 <button type="submit" class="btn btn-primary">Smazat</button>
