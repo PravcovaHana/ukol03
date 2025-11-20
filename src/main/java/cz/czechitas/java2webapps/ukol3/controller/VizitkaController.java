@@ -84,6 +84,13 @@ public class VizitkaController {
 
     @PostMapping("/novaUlozit")
     public String append(Vizitka vizitka) {
+        if (bindingResult.hasErrors()) {
+            ModelAndView modelAndView = new ModelAndView("/detail");
+            modelAndView.addObject("vizitka", vizitka);
+            modelAndView.addObject("idVizitka", id);
+            return modelAndView;
+        }
+
         service.append(vizitka);
         return "redirect:/";
     }
