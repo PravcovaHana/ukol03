@@ -83,11 +83,10 @@ public class VizitkaController {
     }
 
     @PostMapping("/novaUlozit")
-    public String append(Vizitka vizitka) {
+    public Object append( @Valid @ModelAttribute("vizitka")  Vizitka vizitka, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             ModelAndView modelAndView = new ModelAndView("/detail");
             modelAndView.addObject("vizitka", vizitka);
-            modelAndView.addObject("idVizitka", id);
             return modelAndView;
         }
 
